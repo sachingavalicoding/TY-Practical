@@ -33,7 +33,8 @@ int main(int argc, char **argv) {
 
     // Calculate global average
     local_avg = (double)local_sum / ARRAY_SIZE;
-    MPI_Reduce(&local_avg, &global_avg, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&local_avg, &global_avg, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORL
+    D);
     if (rank == 0) {
         global_avg /= size;
     }
